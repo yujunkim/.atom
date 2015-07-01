@@ -1,0 +1,40 @@
+"*":
+  "exception-reporting":
+    userId: "f8baeef2-1c69-2cdb-2feb-e551bbfced5e"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+    projectHome: "/Users/yujun/git"
+    disabledPackages: [
+      "nuclide-file-tree"
+      "nuclide-click-to-symbol"
+      "nuclide-code-format"
+      "nuclide-diff-view"
+      "nuclide-flow"
+      "nuclide-hack"
+      "nuclide-hg-repository"
+      "nuclide-quick-open"
+      "nuclide-remote-projects"
+      "nuclide-ssh-dialog"
+      "nuclide-tabs"
+      "nuclide-type-hint"
+      "language-hack"
+      "vim-mode"
+      "minimap-highlight-selected"
+      "tabs"
+    ]
+  editor:
+    invisibles: {}
+    softWrap: true
+  "tree-view": {}
+  minimap:
+    plugins:
+      "git-diff": true
+      bookmarks: true
+      selection: true
+      "find-and-replace": true
+  term2: {}
