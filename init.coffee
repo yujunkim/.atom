@@ -17,6 +17,7 @@ indicator = "top"
 # [paneIdx, itemIdx]
 togglePaneItemCurrentIdx = [0,0]
 togglePaneItemPrevIdx = [0,0]
+togglePaneItemDisable = true
 
 atom.commands.add 'body',
   # to use ctrl-x 1
@@ -61,13 +62,16 @@ atom.commands.add 'body',
           indicator += 1
   # to use toggle pane item
   'user:toggle-pane-item': (event) ->
+    return if togglePaneItemDisable
     prevPaneIdx = togglePaneItemPrevIdx[0]
     prevItemIdx = togglePaneItemPrevIdx[1]
     prevPane = atom.workspace.getPanes()[prevPaneIdx]
     prevPane.activate()
     prevPane.activateItemAtIndex(prevItemIdx)
 
+# to use toggle pane item
 atom.workspace.onDidChangeActivePaneItem ->
+  togglePaneItemDisable = false
   activePane =  atom.workspace.getActivePane()
   activePaneIdx = atom.workspace.getPanes().indexOf(activePane)
   activeItemIdx = atom.workspace.getActivePane().getActiveItemIndex()
@@ -75,6 +79,11 @@ atom.workspace.onDidChangeActivePaneItem ->
   unless togglePaneItemCurrentIdx[0] == activePaneIdx and togglePaneItemCurrentIdx[1] == activeItemIdx
     togglePaneItemPrevIdx = togglePaneItemCurrentIdx
     togglePaneItemCurrentIdx = [activePaneIdx, activeItemIdx]
+
+atom.workspace.onDidDestroyPaneItem ->
+  togglePaneItemDisable = true
+
+
 
 # to use ctrl-k
 atom.keymaps.keyBindings = atom.keymaps.keyBindings.filter (keyBinding) ->
