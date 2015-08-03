@@ -37,4 +37,6 @@
       bookmarks: true
       selection: true
       "find-and-replace": true
+    absoluteMode: true
   term2: {}
+  react: {}

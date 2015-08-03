@@ -32,14 +32,19 @@
   'ctrl-x ctrl-b': 'window:focus-pane-on-left'
   'ctrl-x ctrl-n': 'window:focus-pane-below'
   'ctrl-x ctrl-p': 'window:focus-pane-above'
+  'ctrl-/': 'core:undo'
+  'ctrl-shift-/': 'core:redo'
+  'ctrl-shift-h': 'core:delete'
+  'ctrl-t': 'user:toggle-pane-item'
 
 'atom-text-editor':
   'ctrl-w': 'editor:move-to-end-of-word'
   'ctrl-v': 'editor:move-to-beginning-of-word'
   'ctrl-shift-w': 'editor:select-to-end-of-word'
   'ctrl-shift-v': 'editor:select-to-beginning-of-word'
-  'ctrl-l': 'editor:select-line'
+  'ctrl-l': 'user:move-cursor'
   'ctrl-j': 'editor:join-lines'
+  'ctrl-t': 'user:toggle-pane-item'
 
 'atom-workspace':
   'ctrl-d': 'core:page-down'
